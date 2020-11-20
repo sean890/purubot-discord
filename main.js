@@ -34,13 +34,7 @@ client.on('message', message => {
         console.log(CMD_NAME); // log
         console.log(args); // log
 
-        if(CMD_NAME === 'puru') {
-            client.commands.get('puru').execute(message, args);
-        }
-        else if(CMD_NAME === 'bronya') {
-            client.commands.get('bronya').execute(message, args);
-        }
-        else if(CMD_NAME === 'p') {
+        if(CMD_NAME === 'p') {
             client.commands.get('emote').execute(client, message, args);
             try {
                 message.delete();
