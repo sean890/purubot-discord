@@ -2,7 +2,7 @@
   "name": "purubot-discord",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/sean890/purubot-discord/issues"
   },
-  "homepage": "https://github.com/sean890/purubot-discord#readme"
+  "homepage": "https://github.com/sean890/purubot-discord#readme",
+  "dependencies": {
+    "discord.js": "^12.4.1",
+    "dotenv": "^8.2.0"
+  }
 }
