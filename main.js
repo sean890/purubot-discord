@@ -31,8 +31,8 @@ client.on('message', message => {
             .trim()
             .substring(prefix.length)
             .split(/ +/);
-        console.log(CMD_NAME);
-        console.log(args);
+        console.log(CMD_NAME); // log
+        console.log(args); // log
 
         if(CMD_NAME === 'puru') {
             client.commands.get('puru').execute(message, args);
@@ -42,6 +42,11 @@ client.on('message', message => {
         }
         else if(CMD_NAME === 'p') {
             client.commands.get('emote').execute(client, message, args);
+            try {
+                message.delete();
+            } catch(error) {
+                console.error("Error occured when trying to delete user's message: "+error)
+            }
         }
     }
 
