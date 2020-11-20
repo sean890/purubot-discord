@@ -2,8 +2,8 @@ module.exports = {
     name: 'wish',
     description: "genshin impact wish simulator",
     execute(Discord, client, message, args) {
-        // gacha result image url
-        
+        // gacha 5* result image url
+        var gacha_image = "";
 
         // create discord embed message to be displayed to user
         const embed = new Discord.MessageEmbed()
