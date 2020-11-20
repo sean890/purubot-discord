@@ -20,7 +20,7 @@ for(const file of commandFiles) {
 }
 
 client.once('ready', () => {
-    console.log('puru-testing-bot is online');
+    console.log('puru bot is online');
 });
 
 client.on('message', message => {
@@ -36,11 +36,9 @@ client.on('message', message => {
 
         if(CMD_NAME === 'p') {
             client.commands.get('emote').execute(client, message, args);
-            try {
-                message.delete();
-            } catch(error) {
-                console.error("Error occured when trying to delete user's message: "+error)
-            }
+        }
+        else if(CMD_NAME === 'wish') {
+            client.commands.get('wish').execute(Discord, client, message, args);
         }
     }
 
