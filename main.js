@@ -42,6 +42,12 @@ client.on('message', message => {
                 console.error("Error occured when trying to delete user's message: "+error)
             }
         }
+        else if (CMD_NAME === 'genshin') {
+            const genshin_command = args[0];
+            if(genshin_command === 'ar') {
+                client.commands.get('genshin_ar_counter').execute(Discord, message, args);
+            }
+        }
     }
 
 });
