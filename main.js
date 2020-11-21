@@ -34,6 +34,19 @@ client.on('message', message => {
         console.log(CMD_NAME); // log
         console.log(args); // log
 
+        // input validator
+        const REGEX = /^[0-9a-zA-Z]+$/;
+        if (!CMD_NAME.match(REGEX)) {
+            console.log('CMD_NAME is invalid');
+            return;
+        }
+        for (var i = 0; i < args.length; i++) {
+            if (!args[i].match(REGEX)) {
+                console.log('args[' + i + '] is invalid');
+                return;
+            }
+        }
+
         if(CMD_NAME === 'p') {
             client.commands.get('emote').execute(client, message, args);
             try {
@@ -45,7 +58,10 @@ client.on('message', message => {
         else if (CMD_NAME === 'genshin') {
             const genshin_command = args[0];
             if(genshin_command === 'ar') {
-                client.commands.get('genshin_ar_counter').execute(Discord, message, args);
+                client.commands.get('genshin_ar_counter').execute(Discord, client, message, args);
+            }
+            else {
+                client.commands.get('genshin_help').execute(Discord, message, args);
             }
         }
     }
