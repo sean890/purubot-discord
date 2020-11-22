@@ -15,7 +15,7 @@ const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('
 
 for(const file of commandFiles) {
     const command = require(`./commands/${file}`);
-
+    // console.log(file);
     client.commands.set(command.name, command);
 }
 
@@ -31,15 +31,42 @@ client.on('message', message => {
             .trim()
             .substring(prefix.length)
             .split(/ +/);
-        console.log(CMD_NAME); // log
-        console.log(args); // log
+        // console.log(CMD_NAME); // log
+        // console.log(args); // log
 
+        // input validator
+        const REGEX = /^[0-9a-zA-Z]+$/;
+        if (!CMD_NAME.match(REGEX)) {
+            // console.log('CMD_NAME is invalid');
+            return;
+        }
+        for (var i = 0; i < args.length; i++) {
+            if (!args[i].match(REGEX)) {
+                // console.log('args[' + i + '] is invalid');
+                return;
+            }
+        }
+
+        /* command: -p */
         if(CMD_NAME === 'p') {
             client.commands.get('emote').execute(client, message, args);
             try {
                 message.delete();
             } catch(error) {
-                console.error("Error occured when trying to delete user's message: "+error)
+                console.error("WARNING: Error occured when trying to delete user's message: "+error)
+            }
+        }
+        /* command: -genshin */
+        else if (CMD_NAME === 'genshin') {
+            const genshin_args = args[0]; // fetch the argument after -genshin
+
+            /* command: -genshin ar */
+            if(genshin_args === 'ar') {
+                client.commands.get('genshin_ar_counter').execute(Discord, client, message, args);
+            }
+            /* help command for: -genshin */
+            else {
+                client.commands.get('genshin_help').execute(Discord, message);
             }
         }
     }

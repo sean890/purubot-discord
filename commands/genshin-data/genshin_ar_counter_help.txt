@@ -1,0 +1,19 @@
+**`-genshin ar`**
+Calculates the number of days needed to reach the next 10 AR levels.
+
+***Parameters***
+`[AR level]`: Your current AR level
+`[Current EXP]`: The amount of EXP you currently have at your AR level, _optional_
+`[Number of Weis]`: The number of Wei Hilichurls you kill a day, _optional_
+
+***Usages***
+`-genshin ar [AR level]`
+`-genshin ar [AR level] [your current exp]`
+`-genshin ar [AR level] [your current exp] [Number of Weis]`
+
+***Examples***
+`-genshin ar 30`
+`-genshin ar 30 2750`
+`-genshin ar 30 2750 5`
+
+_Fun fact: EXP given per commission completed differs on different AR levels, but puru is smart enough to take that into account!_
