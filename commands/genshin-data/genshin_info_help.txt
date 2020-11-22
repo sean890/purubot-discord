@@ -1,0 +1,14 @@
+**`~genshin info`**
+Fetch genshin related information with keywords!
+
+***Parameters***
+`[keyword]`: Keyword of the info you wish to display
+
+
+***Usages***
+`~genshin info [keyword]`
+
+***Examples***
+`~genshin info artifacts`
+
+***Keywords available***
