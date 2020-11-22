@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-const prefix = '-';
+const prefix = '~';
 
 const fs = require('fs');
 
@@ -50,11 +50,6 @@ client.on('message', message => {
         /* command: -p */
         if(CMD_NAME === 'p') {
             client.commands.get('emote').execute(client, message, args);
-            try {
-                message.delete();
-            } catch(error) {
-                console.error("WARNING: Error occured when trying to delete user's message: "+error)
-            }
         }
         /* command: -genshin */
         else if (CMD_NAME === 'genshin') {

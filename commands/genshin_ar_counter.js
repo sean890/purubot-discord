@@ -2,7 +2,7 @@ const { ADDRCONFIG } = require('dns');
 const { features, exitCode } = require('process');
 
 // preparing help message for user
-const HELP_MESSAGE = "too complex for puru, type `-genshin ar` for help manual";
+const HELP_MESSAGE = "too complex for paimon, type `~genshin ar` for help manual";
 const AR_OVER_MESSAGE = "high and gay AR, no calculations available for you";
 
 const NUMBER_OF_COM_PER_DAY = 4; // number of commissions a day
@@ -27,9 +27,9 @@ module.exports = {
         // miscellaneous
         var puru_booli_emote = client.emojis.cache.find(emoji => emoji.name === "purubooli");
 
-        console.log("args[1]="+args[1]);
-        console.log("args[2]="+args[2]);
-        console.log("args[3]="+args[3]);
+        // console.log("args[1]="+args[1]);
+        // console.log("args[2]="+args[2]);
+        // console.log("args[3]="+args[3]);
 
         // first check if the args fields are registered one by one
         var ar_registered = false;
@@ -45,9 +45,9 @@ module.exports = {
         if (typeof args[3] !== 'undefined') {
             num_weis_registered = true;
         }
-        console.log("ar_registered="+ar_registered);
-        console.log("exp_registered="+exp_registered);
-        console.log("num_weis_registered="+num_weis_registered);
+        // console.log("ar_registered="+ar_registered);
+        // console.log("exp_registered="+exp_registered);
+        // console.log("num_weis_registered="+num_weis_registered);
 
         // fetching the values into local variables
         typeof ar; // user's AR (adventure rank)
@@ -59,9 +59,9 @@ module.exports = {
             exp = parseInt(args[2]);
             num_weis = parseInt(args[3]);
         } catch {}
-        console.log("ar="+ar);
-        console.log("exp="+exp);
-        console.log("num_weis="+num_weis);
+        // console.log("ar="+ar);
+        // console.log("exp="+exp);
+        // console.log("num_weis="+num_weis);
 
         /* Input validity check & print help message*/
         // send help manual if no argument inputs registered
@@ -199,7 +199,7 @@ module.exports = {
         .setURL("https://discord.js.org/#/docs/main/v12/class/MessageEmbed")
         .addFields({
             name: "Days to hit the corresponding AR levels",
-            value: "Calculating starting from AR "+ ar + " - " + exp + "/" + ar_levels_json[ar-1].exp +" and " + num_weis + " weis hunted daily" + "\n\n" + info_string + "\nCalculations only includes EXP gained from commissions, resin and weis\nDoes not include EXP gained from story, events and chests, thus actual progress might differ.\n\nType `-genshin ar` for more info about the command!"
+            value: "Calculating starting from AR "+ ar + " - " + exp + "/" + ar_levels_json[ar-1].exp +" and " + num_weis + " weis hunted daily" + "\n\n" + info_string + "\nCalculations only includes EXP gained from commissions, resin and weis\nDoes not include EXP gained from story, events and chests, thus actual progress might differ.\n\nType `~genshin ar` for more info about the command!"
         });
 
         message.channel.send(embed);
