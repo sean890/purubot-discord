@@ -1,7 +1,0 @@
-***Usages***
-`-genshin ar [your AR level]`
-`-genshin ar [your AR level] [your current exp]`
-
-***Examples***
-`-genshin ar 30`
-`-genshin ar 30 2750`

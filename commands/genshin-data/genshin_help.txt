@@ -1,0 +1,6 @@
+**`-genshin`**
+
+***Available commands***
+`-genshin ar`
+
+Type the commands above to show its specific usage guide.
