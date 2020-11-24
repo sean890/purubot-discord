@@ -2,7 +2,7 @@ const { ADDRCONFIG } = require('dns');
 const { features, exitCode } = require('process');
 
 // preparing help message for user
-const HELP_MESSAGE = "too complex for paimon, type `~genshin ar` for help manual";
+const HELP_MESSAGE = "too complex for paimon, type `~g ar` for help manual";
 const AR_OVER_MESSAGE = "high and gay AR, no calculations available for you";
 
 const NUMBER_OF_COM_PER_DAY = 4; // number of commissions a day
@@ -49,6 +49,13 @@ module.exports = {
         if (typeof args[4] !== 'undefined') {
             add_exp_registered = true;
         }
+
+        // send help manual if no argument inputs registered
+        if (!ar_registered) {
+            client.commands.get('genshin_ar_counter_help').execute(Discord, message);
+            return;
+        }
+        
         // console.log("ar_registered="+ar_registered);
         // console.log("exp_registered="+exp_registered);
         // console.log("num_weis_registered="+num_weis_registered);
@@ -70,13 +77,8 @@ module.exports = {
         // console.log("num_weis="+num_weis);
 
         /* Input validity check & print help message*/
-        // send help manual if no argument inputs registered
-        if (!ar_registered) {
-            client.commands.get('genshin_ar_counter_help').execute(Discord, message);
-            return;
-        }
         // if ar input is given but NaN
-        else if (ar_registered && Number.isNaN(ar)) {
+        if (ar_registered && Number.isNaN(ar)) {
             // console.log('ar input is given but NaN');
             message.channel.send(`${HELP_MESSAGE} ${puru_booli_emote}`);
             return;
@@ -216,7 +218,7 @@ module.exports = {
         .setURL("https://discord.js.org/#/docs/main/v12/class/MessageEmbed")
         .addFields({
             name: "Days to hit the corresponding AR levels",
-            value: "Calculating starting from AR "+ ar + " - " + exp + "/" + ar_levels_json[ar-1].exp +", " + num_weis + " weis hunted daily and additional " + add_exp + " EXP gained daily." + "\n\n" + info_string + "\nCalculations only includes EXP gained from commissions, resin and weis\nDoes not include EXP gained from story, events and chests, thus actual progress might differ.\n\nType `~genshin ar` for more info about the command!"
+            value: "Calculating starting from AR "+ ar + " - " + exp + "/" + ar_levels_json[ar-1].exp +", " + num_weis + " weis hunted daily and additional " + add_exp + " EXP gained daily." + "\n\n" + info_string + "\nCalculations only includes EXP gained from commissions, resin and weis.\nDoes not include EXP gained from story, events and chests, thus actual progress might differ.\nAdditional info: 180 resin a day, 175/200/225/250 EXP per commission, 18 EXP per wei\n\nType `~g ar` for more info about the command!"
         });
 
         message.channel.send(embed);

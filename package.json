@@ -18,6 +18,7 @@
   "homepage": "https://github.com/sean890/purubot-discord#readme",
   "dependencies": {
     "discord.js": "^12.4.1",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "fuse.js": "^6.4.3"
   }
 }

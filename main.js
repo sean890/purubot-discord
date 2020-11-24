@@ -52,7 +52,7 @@ client.on('message', message => {
             client.commands.get('emote').execute(client, message, args);
         }
         /* command: ~genshin */
-        else if (CMD_NAME === 'genshin') {
+        else if (CMD_NAME === 'genshin' || CMD_NAME === 'g') {
             const genshin_args = args[0]; // fetch the argument after -genshin
 
             /* command: ~genshin ar */
