@@ -1,19 +1,26 @@
-**`-genshin ar`**
+**`~genshin ar`**
 Calculates the number of days needed to reach the next 10 AR levels.
 
 ***Parameters***
 `[AR level]`: Your current AR level
-`[Current EXP]`: The amount of EXP you currently have at your AR level, _optional_
-`[Number of Weis]`: The number of Wei Hilichurls you kill a day, _optional_
+
+_Optional:_
+`[Current EXP]`: The amount of EXP you currently have at your AR level
+`[Number of Weis]`: The number of Wei Hilichurls you kill a day
+`[Additional EXP]` : The amount of additional EXP gained daily
 
 ***Usages***
-`-genshin ar [AR level]`
-`-genshin ar [AR level] [your current exp]`
-`-genshin ar [AR level] [your current exp] [Number of Weis]`
+`~g ar [AR level]`
+`~g ar [AR level] [your current exp]`
+`~g ar [AR level] [your current exp] [Number of Weis]`
+`~g ar [AR level] [your current exp] [Number of Weis] [Additional EXP]`
 
 ***Examples***
-`-genshin ar 30`
-`-genshin ar 30 2750`
-`-genshin ar 30 2750 5`
+`~g ar 30`
+`~g ar 30 2750`
+`~g ar 30 2750 5`
+`~g ar 30 2750 5 300`
 
-_Fun fact: EXP given per commission completed differs on different AR levels, but puru is smart enough to take that into account!_
+_Fun fact: EXP given per commission completed differs on different AR levels, but paimon is smart enough to take that into account!_
+
+Additional info: 180 resin a day, 175/200/225/250 EXP per commission, 18 EXP per wei

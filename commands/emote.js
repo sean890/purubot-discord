@@ -6,5 +6,10 @@ module.exports = {
         if (String(emote) !== "undefined") {
             message.channel.send(`${emote}`);
         }
+        // try {
+        //     message.delete();
+        // } catch(error) {
+        //     // console.error("WARNING: Error occured when trying to delete user's message: "+error)
+        // }
     }
 }

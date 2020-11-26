@@ -1,6 +1,6 @@
 module.exports = {
     name: 'genshin_ar_counter_help',
-    description: "help manual for using -genshin ar commands",
+    description: "help manual for using ~genshin ar commands",
     execute(Discord, message) {
 
         // fetch help message string from file
