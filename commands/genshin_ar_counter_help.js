@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     name: 'genshin_ar_counter_help',
     description: "help manual for using ~genshin ar commands",
@@ -5,7 +7,7 @@ module.exports = {
 
         // fetch help message string from file
         var fs = require('fs');
-        fs.readFile(__dirname+"\\"+"genshin-data"+"\\"+"genshin_ar_counter_help.txt", 'utf8', function(err, data) {
+        fs.readFile(path.resolve(__dirname, "genshin-data", "genshin_ar_counter_help.txt"), 'utf8', function(err, data) {
             // creating embed message for discord
             const embed = new Discord.MessageEmbed()
             .setAuthor(message.author.username, message.author.avatarURL())

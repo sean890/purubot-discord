@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     name: 'genshin_info_help',
     description: "help manual for using ~g info commands",
@@ -7,7 +9,7 @@ module.exports = {
 
         // compile keywords available in file: ./user-given-data/genshin_info_keywords.json
         // console.log('searching for json file');
-        let rawdata = fs.readFileSync(__dirname+"\\"+"user-given-data"+"\\"+"genshin_info_keywords.json");
+        let rawdata = fs.readFileSync(path.resolve(__dirname, "user-given-data", "genshin_info_keywords.json"));
         let genshin_info_keywords = JSON.parse(rawdata);
         var keywords_string = "";
         for (var i = 0; i < genshin_info_keywords.length; i++) {
@@ -16,7 +18,7 @@ module.exports = {
         
 
         // fetch help message string from file
-        fs.readFile(__dirname+"\\"+"genshin-data"+"\\"+"genshin_info_help.txt", 'utf8', function(err, data) {
+        fs.readFile(path.resolve(__dirname, "genshin-data", "genshin_info_help.txt"), 'utf8', function(err, data) {
             // creating embed message for discord
             const embed = new Discord.MessageEmbed()
             .setAuthor(message.author.username, message.author.avatarURL())
