@@ -1,5 +1,6 @@
 const { ADDRCONFIG } = require('dns');
 const { features, exitCode } = require('process');
+const path = require('path');
 
 // fuse.js
 const FUSE_SCORE_THRESHOLD = 0.01; // a search result must be lower than this to be qualified
@@ -64,7 +65,7 @@ module.exports = {
             console.log('phase 1 occured');
             // compile keywords available in file: ./user-given-data/genshin_info_keywords.json
             var fs = require('fs');
-            let rawdata = fs.readFileSync(__dirname + "\\" + "user-given-data" + "\\" + "genshin_info_keywords.json");
+            let rawdata = fs.readFileSync(path.resolve(__dirname, "user-given-data", "genshin_info_keywords.json"));
             let genshin_info_keywords = JSON.parse(rawdata);
 
             // boolean to check if something is found
