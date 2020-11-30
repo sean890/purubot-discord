@@ -65,14 +65,27 @@ module.exports = {
             console.log('phase 1 occured');
             // compile keywords available in file: ./user-given-data/genshin_info_keywords.json
             var fs = require('fs');
+            console.log(path.resolve(__dirname, "user-given-data", "genshin_info_keywords.json"));
             let rawdata = fs.readFileSync(path.resolve(__dirname, "user-given-data", "genshin_info_keywords.json"));
             let genshin_info_keywords = JSON.parse(rawdata);
+
+            // debug
+            for (var i = 0; i < genshin_info_keywords.length; i++) {
+                console.log("ID: " + genshin_info_keywords[i].id + " - " + genshin_info_keywords[i].keyword);
+            }
 
             // boolean to check if something is found
             var id_match_found = false;
 
+            // output variables
+            var id_output = "";
+            var keyword_output = "";
+            var content_output = "";
+            var image_output = "";
+
             /* Matching the input keyword with the database, if possible use a better matcher algorithm */
             for (var i = 0; i < genshin_info_keywords.length; i++) {
+                console.log(genshin_info_keywords[i].id + " vs " + input_keyword);
                 if (genshin_info_keywords[i].id === input_keyword) {
                     id_output += genshin_info_keywords[i].id;
                     keyword_output += genshin_info_keywords[i].keyword;
@@ -85,7 +98,7 @@ module.exports = {
             }
 
             // if no such id exist
-            if (id_match_found) {
+            if (!id_match_found) {
                 message.channel.send(`${HELP_MESSAGE} ${puru_booli_emote}`);
                 return;
             }
