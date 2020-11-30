@@ -135,8 +135,8 @@ module.exports = {
         const fuse_results = fuse.search(input_keyword);
 
         // debug
-        console.log("fuse_results");
-        console.log(fuse_results);
+        // console.log("fuse_results");
+        // console.log(fuse_results);
         // console.log("fuse_results[0]");
         // console.log(fuse_results[0]);
         // console.log("fuse_results[0].item.keyword");
