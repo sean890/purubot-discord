@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/sean890/purubot-discord#readme",
   "dependencies": {
+    "csv": "^5.3.2",
+    "csv-write-stream": "^2.0.0",
     "discord.js": "^12.4.1",
     "dotenv": "^8.2.0",
-    "fuse.js": "^6.4.3"
+    "fuse.js": "^6.4.3",
+    "node-csv": "^0.1.2"
   }
 }
