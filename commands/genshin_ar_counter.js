@@ -1,5 +1,6 @@
 const { ADDRCONFIG } = require('dns');
 const { features, exitCode } = require('process');
+const path = require('path');
 
 // preparing help message for user
 const HELP_MESSAGE = "too complex for paimon, type `~g ar` for help manual";
@@ -111,7 +112,7 @@ module.exports = {
 
         // read in json data for AR information
         const fs = require('fs');
-        let rawdata = fs.readFileSync(__dirname+"\\"+"genshin-data"+"\\"+"ar_levels.json");
+        let rawdata = fs.readFileSync(path.resolve(__dirname, "genshin-data", "ar_levels.json"));
         let ar_levels_json = JSON.parse(rawdata);
 
         // calculation logic here
