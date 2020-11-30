@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     name: 'genshin_help',
     description: "help manual for using ~genshin commands",
