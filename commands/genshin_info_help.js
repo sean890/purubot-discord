@@ -8,7 +8,6 @@ module.exports = {
         var fs = require('fs');
 
         // compile keywords available in file: ./user-given-data/genshin_info_keywords.csv
-        
         const parse = require('csv-parse');
         var parser = parse({columns: true}, function (err, genshin_info_keywords) {
             var keywords_string = "";
