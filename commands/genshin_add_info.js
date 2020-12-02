@@ -31,9 +31,9 @@ module.exports = {
             .split("|");
 
         title = trimChar(title, '\n');
-        title = title.replace(/\r?\n|\r/g, " "); // replacing '\n' characters with " " since its the title
+        title = title.replace(/\r?\n|\r/g, " "); // replacing '\n' characters with " "
         body = trimChar(body, '\n');
-        body = body.replace(/\r?\n|\r/g, "\\n"); // replacing '\n' characters with "\\n"
+        body = body.replace(/\r?\n|\r/g, "\\n"); // replacing '\n' characters with " "
         console.log("title");
         console.log(title);
         console.log("body");

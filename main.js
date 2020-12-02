@@ -71,6 +71,10 @@ client.on('message', message => {
             else if (genshin_args === 'add' && args[1] === 'info') {
                 client.commands.get('genshin_add_info').execute(Discord, client, message, args);
             }
+            /* command: ~genshin weapon */
+            else if (genshin_args === 'weapon' || genshin_args === 'w') {
+                client.commands.get('genshin_weapon').execute(Discord, client, message, args);
+            }
             /* help command for: ~genshin */
             else {
                 client.commands.get('genshin_help').execute(Discord, message);
