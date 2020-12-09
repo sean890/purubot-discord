@@ -1,7 +1,7 @@
 module.exports = {
     name: 'emote',
     description: "command for using free emotes!",
-    execute(client, message, args) {
+    execute(client, message, args, db) {
         db.genshin_info.findAll()
             .then(function(info) {
                 var rawdata = JSON.stringify(info, null, 2);
