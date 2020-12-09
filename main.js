@@ -12,14 +12,7 @@ const db = require('./models/index.js');
 
 // db.genshin_info.findOrCreate({where: {keyword: "paimon", content: "paimon ichiban kawaii owo"}});
 
-db.genshin_info.findAll()
-    .then(function(info) {
-        var rawdata = JSON.stringify(info, null, 2);
-        var json_info = JSON.parse(rawdata);
-        console.log(json_info[0].id);
-        console.log(json_info[0].keyword);
-        console.log(json_info[0].content);
-    });
+
 
 
 
@@ -64,7 +57,7 @@ client.on('message', message => {
 
         /* command: ~p */
         if(CMD_NAME === 'p') {
-            client.commands.get('emote').execute(client, message, args);
+            client.commands.get('emote').execute(client, message, args, db);
         }
         /* command: ~genshin */
         else if (CMD_NAME === 'genshin' || CMD_NAME === 'g') {
