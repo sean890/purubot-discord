@@ -35,17 +35,17 @@ client.on('message', message => {
         // console.log(args); // log
 
         // input validator
-        const REGEX = /^[0-9a-zA-Z]+$/;
-        if (!CMD_NAME.match(REGEX)) {
-            // console.log('CMD_NAME is invalid');
-            return;
-        }
-        for (var i = 0; i < args.length; i++) {
-            if (!args[i].match(REGEX)) {
-                // console.log('args[' + i + '] is invalid');
-                return;
-            }
-        }
+        // const REGEX = /^[0-9a-zA-Z]+$/;
+        // if (!CMD_NAME.match(REGEX)) {
+        //     // console.log('CMD_NAME is invalid');
+        //     return;
+        // }
+        // for (var i = 0; i < args.length; i++) {
+        //     if (!args[i].match(REGEX)) {
+        //         // console.log('args[' + i + '] is invalid');
+        //         return;
+        //     }
+        // }
 
         /* command: ~p */
         if(CMD_NAME === 'p') {
@@ -62,6 +62,18 @@ client.on('message', message => {
             /* command: ~genshin info */
             else if (genshin_args === 'info') {
                 client.commands.get('genshin_info').execute(Discord, client, message, args);
+            }
+            /* command: ~genshin infolist */
+            else if (genshin_args === 'infolist') {
+                client.commands.get('genshin_infolist').execute(Discord, message);
+            }
+            /* command: ~genshin add info */
+            else if (genshin_args === 'add' && args[1] === 'info') {
+                client.commands.get('genshin_add_info').execute(Discord, client, message, args);
+            }
+            /* command: ~genshin weapon */
+            else if (genshin_args === 'weapon' || genshin_args === 'w') {
+                client.commands.get('genshin_weapon').execute(Discord, client, message, args);
             }
             /* help command for: ~genshin */
             else {
