@@ -18,7 +18,7 @@ module.exports = {
 
         // compile keywords available in file: ./user-given-data/genshin_info_keywords.csv
         const parse = require('csv-parse');
-        var parser = parse({ columns: true }, function (err, genshin_info_keywords) {
+        var parser = parse({ columns: true, delimiter: "|" }, function (err, genshin_info_keywords) {
             var keywords_string = "";
             for (var i = 0; i < genshin_info_keywords.length; i++) {
                 keywords_string += "ID: " + genshin_info_keywords[i].id + " - " + genshin_info_keywords[i].keyword + "\n";

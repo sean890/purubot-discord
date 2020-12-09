@@ -10,6 +10,7 @@ const Fuse = require('fuse.js');
 var fs = require('fs');
 const parse = require('csv-parse/lib/sync');
 var genshin_info_keywords = parse(fs.readFileSync(path.resolve(__dirname, "user-given-data", "genshin_info_keywords.csv")), {
+    delimiter: "|",
     columns: true,
     skip_empty_lines: true
 })
@@ -103,7 +104,7 @@ module.exports = {
 
             // if no such id exist
             if (!id_match_found) {
-                message.channel.send(`${HELP_MESSAGE + "tst"} ${puru_booli_emote}`);
+                message.channel.send(`${HELP_MESSAGE} ${puru_booli_emote}`);
                 return;
             }
 

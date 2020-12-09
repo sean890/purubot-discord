@@ -10,6 +10,7 @@ const Fuse = require('fuse.js');
 var fs = require('fs');
 const parse = require('csv-parse/lib/sync');
 var genshin_info_keywords = parse(fs.readFileSync(path.resolve(__dirname, "user-given-data", "genshin_weapons.csv")), {
+    delimiter: "|",
     columns: true,
     skip_empty_lines: true
 })

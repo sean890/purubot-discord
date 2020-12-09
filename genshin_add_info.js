@@ -18,6 +18,18 @@ function trimChar(string, charToRemove) {
     return string;
 }
 
+function trimChar2(string, charToRemove, charToRemove2) {
+    while(string.charAt(0)==charToRemove || string.charAt(0)==charToRemove2) {
+        string = string.substring(1).trim();
+    }
+
+    while(string.charAt(string.length-1)==charToRemove || string.charAt(string.length-1)==charToRemove2) {
+        string = string.substring(0,string.length-1).trim();
+    }
+
+    return string;
+}
+
 module.exports = {
     name: 'genshin_add_info',
     description: "command for adding new info into genshin_info_keywords",
@@ -30,10 +42,11 @@ module.exports = {
             .trim()
             .split("|");
 
-        title = trimChar(title, '\n');
-        title = title.replace(/\r?\n|\r/g, " "); // replacing '\n' characters with " "
-        body = trimChar(body, '\n');
-        body = body.replace(/\r?\n|\r/g, "\\n"); // replacing '\n' characters with " "
+        title = trimChar2(title, '\n', " ");
+        // title = title.replace(/\r?\n|\r/g, " "); // replacing '\n' characters with " "
+        body = trimChar2(body, '\n', " ");
+        
+        // body = body.replace(/\r?\n|\r/g, "\\n"); // replacing '\n' characters with " "
         console.log("title");
         console.log(title);
         console.log("body");
@@ -63,7 +76,11 @@ module.exports = {
 
         var csvWriter = require('csv-write-stream');
 
-        var writer = csvWriter({sendHeaders: false});
+        var writer = csvWriter({
+            sendHeaders: false,
+            separator: "|",
+            newline: "~"
+        });
         writer.pipe(fs.createWriteStream(path.resolve(__dirname, "user-given-data", "genshin_info_keywords.csv"), {flags: 'a'}));
         writer.write({
             id: "3",

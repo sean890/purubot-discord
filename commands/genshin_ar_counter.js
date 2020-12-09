@@ -7,6 +7,7 @@ const HELP_MESSAGE = "too complex for paimon, type `~g ar` for help manual";
 const AR_OVER_MESSAGE = "high and gay AR, no calculations available for you";
 
 const NUMBER_OF_COM_PER_DAY = 4; // number of commissions a day
+const COM_COMPLETION_EXP = 500; // amount of exp given for completing daily commissions
 const RESIN_EXP_PER_DAY = 900 // 180 resin a day = 800 exp
 
 // exp per commission, vary with AR
@@ -156,36 +157,39 @@ module.exports = {
             add_exp = 0;
         }
 
+        // exp for commissions
+        var exp_per_com = 0;
+            
+        // no commission exp if below AR 12
+        if (curr_level < 12) {
+            exp_per_com = 0;
+        }
+        else if (curr_level < 16) {
+            exp_per_com = EXP_PER_COM_AR12to15;
+        }
+        else if (curr_level < 25) {
+            exp_per_com = EXP_PER_COM_AR16to24;
+        }
+        else if (curr_level < 35) {
+            exp_per_com = EXP_PER_COM_AR25to34;
+        }
+        else if (curr_level < 55) {
+            exp_per_com = EXP_PER_COM_AR35to55;
+        }
+
+        // total exp gained daily
+        var total_exp_daily = RESIN_EXP_PER_DAY + (exp_per_com * NUMBER_OF_COM_PER_DAY) + COM_COMPLETION_EXP + wei_exp_daily + add_exp;
+
         // make sure to stop also if ar level exceeds what is stored in database
         while(pos != NUM_LEVELS_COUNTED && curr_level < MAX_LEVEL) {
 
-            var exp_per_com = 0;
-            
-            // no commission exp if below AR 12
-            if (curr_level < 12) {
-                exp_per_com = 0;
-            }
-            else if (curr_level < 16) {
-                exp_per_com = EXP_PER_COM_AR12to15;
-            }
-            else if (curr_level < 25) {
-                exp_per_com = EXP_PER_COM_AR16to24;
-            }
-            else if (curr_level < 35) {
-                exp_per_com = EXP_PER_COM_AR25to34;
-            }
-            else if (curr_level < 55) {
-                exp_per_com = EXP_PER_COM_AR35to55;
-            }
-
-            var total_exp_daily = RESIN_EXP_PER_DAY + (exp_per_com * NUMBER_OF_COM_PER_DAY) + wei_exp_daily + add_exp;
-
             curr_total_exp += total_exp_daily;
-            // console.log('adding ' + total_exp_daily);
+            console.log('adding ' + total_exp_daily);
             day_counter += 1;
 
             // a level up occured
             if (curr_total_exp >= next_total_exp) {
+                console.log('level up');
                 // updating variables
                 // add ar level & day counter into the output arrays
                 curr_level += 1;
