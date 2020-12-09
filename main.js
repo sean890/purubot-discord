@@ -8,6 +8,21 @@ const prefix = '-';
 
 const fs = require('fs');
 
+const db = require('./models/index.js');
+
+// db.genshin_info.findOrCreate({where: {keyword: "paimon", content: "paimon ichiban kawaii owo"}});
+
+db.genshin_info.findAll()
+    .then(function(info) {
+        var rawdata = JSON.stringify(info, null, 2);
+        var json_info = JSON.parse(rawdata);
+        console.log(json_info[0].id);
+        console.log(json_info[0].keyword);
+        console.log(json_info[0].content);
+    });
+
+
+
 client.commands = new Discord.Collection();
 
 // reading from commands folder

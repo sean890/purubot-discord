@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "flooofy",
+    "password": null,
+    "database": "paimon",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "flooofy",
+    "password": null,
+    "database": "paimon",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "flooofy",
+    "password": null,
+    "database": "paimon",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

@@ -23,6 +23,10 @@
     "discord.js": "^12.4.1",
     "dotenv": "^8.2.0",
     "fuse.js": "^6.4.3",
-    "node-csv": "^0.1.2"
+    "node-csv": "^0.1.2",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0"
   }
 }
