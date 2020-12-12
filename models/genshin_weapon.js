@@ -19,9 +19,9 @@ module.exports = (sequelize, DataTypes) => {
     rarity: DataTypes.STRING,
     atk: DataTypes.STRING,
     secondary: DataTypes.STRING,
-    effect: DataTypes.STRING,
+    effect: DataTypes.TEXT,
     obtain: DataTypes.STRING,
-    image: DataTypes.STRING
+    image: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'genshin_weapon',

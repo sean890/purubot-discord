@@ -24,13 +24,13 @@ module.exports = {
         type: Sequelize.STRING
       },
       effect: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       obtain: {
         type: Sequelize.STRING
       },
       image: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,
