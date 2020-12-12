@@ -89,6 +89,14 @@ client.on('message', message => {
             else if (genshin_args === 'weapon' || genshin_args === 'w') {
                 client.commands.get('genshin_weapon').execute(Discord, client, message, args, db);
             }
+            /* command: ~genshin add weapon */
+            else if ((genshin_args === 'a' || genshin_args === 'add') && (args[1] === 'w' || args[1] === 'weapon')) {
+                client.commands.get('genshin_add_weapon').execute(Discord, client, message, db);
+            }
+            /* command: ~genshin delete weapon */
+            else if ((genshin_args === 'd' || genshin_args === 'delete') && (args[1] === 'w' || args[1] === 'weapon')) {
+                client.commands.get('genshin_delete_weapon').execute(Discord, client, message, args, db);
+            }
             /* help command for: ~genshin */
             else {
                 client.commands.get('genshin_help').execute(Discord, message);

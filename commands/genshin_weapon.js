@@ -89,7 +89,7 @@ module.exports = {
             typeof input;
             try {
                 input = parseInt(input_keyword);
-                console.log(input);
+                // console.log(input);
             } catch { }
 
             // if input is number
@@ -189,13 +189,13 @@ module.exports = {
 
                 // if there is no match, send help message
                 if (fuse_results_qualified_pos.length === 0) {
-                    console.log('0 search results');
+                    // console.log('0 search results');
                     message.channel.send(`${HELP_MESSAGE} ${puru_booli_emote}`);
                     return;
                 }
                 // if there is only 1 match, display the info directly
                 else if (fuse_results_qualified_pos.length === 1) {
-                    console.log('1 search result');
+                    // console.log('1 search result');
 
                     // weapon variables to store the output data
                     var weapon_id = fuse_results[fuse_results_qualified_pos[0]].item.id;
@@ -213,7 +213,7 @@ module.exports = {
                 }
                 // if there is more than 1 search result, display their ID and keywords like in genshin_info_help instead
                 else if (fuse_results_qualified_pos.length > 1) {
-                    console.log('multiple search results');
+                    // console.log('multiple search results');
                     // preparing the search_results_string
                     var search_results_string = "";
 
@@ -237,7 +237,7 @@ module.exports = {
                         .setURL("https://discord.js.org/#/docs/main/v12/class/MessageEmbed")
                         .addFields({
                             name: "Search results for '" + input_keyword + "'",
-                            value: search_results_string + "\n\nType `~g weapon [ID]` to fetch the corresponding information."
+                            value: search_results_string + "\n\nType `~g w [ID]` to fetch the corresponding information."
                         });
 
                     message.channel.send(embed);
