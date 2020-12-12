@@ -56,14 +56,14 @@ module.exports = {
         weapon_obtain = trimChar2(weapon_obtain, '\n', " ");
         weapon_image = trimChar2(weapon_image, '\n', " ");
 
-        console.log("weapon_name:--"+weapon_name+"--");
-        console.log("weapon_type:--"+weapon_type+"--");
-        console.log("weapon_rarity:--"+weapon_rarity+"--");
-        console.log("weapon_atk:--"+weapon_atk+"--");
-        console.log("weapon_secondary:--"+weapon_secondary+"--");
-        console.log("weapon_effect:--"+weapon_effect+"--");
-        console.log("weapon_obtain:--"+weapon_obtain+"--");
-        console.log("weapon_image:--"+weapon_image+"--");
+        // console.log("weapon_name:--"+weapon_name+"--");
+        // console.log("weapon_type:--"+weapon_type+"--");
+        // console.log("weapon_rarity:--"+weapon_rarity+"--");
+        // console.log("weapon_atk:--"+weapon_atk+"--");
+        // console.log("weapon_secondary:--"+weapon_secondary+"--");
+        // console.log("weapon_effect:--"+weapon_effect+"--");
+        // console.log("weapon_obtain:--"+weapon_obtain+"--");
+        // console.log("weapon_image:--"+weapon_image+"--");
 
         db.genshin_weapon.findOrCreate({where: {
             name: weapon_name, 
