@@ -10,11 +10,17 @@ const fs = require('fs');
 
 const db = require('./models/index.js');
 
-// db.genshin_info.findOrCreate({where: {keyword: "paimon", content: "paimon ichiban kawaii owo"}});
-
-
-
-
+// temporary execute
+// db.genshin_weapon.findOrCreate({where: {
+//     name: "Skyward Harp", 
+//     type: "Bow",
+//     rarity: "5*",
+//     atk: "674",
+//     secondary: "CRIT Rate 22.1%",
+//     effect: "Increases CRIT DMG by 20/25/30/35/40%. Hits have a 60/70/80/90/100% chance to inflict a small AoE attack, dealing 100% Physical ATK DMG. Can only occur once every 4s.",
+//     obtain: "Gacha",
+//     image: "https://cdn.discordapp.com/attachments/779649025392640000/786908332891832350/Weapon_Skyward_Blade.png"
+// }});
 
 client.commands = new Discord.Collection();
 
@@ -28,7 +34,7 @@ for(const file of commandFiles) {
 }
 
 client.once('ready', () => {
-    console.log('puru-testing-bot is online');
+    console.log('paimon-prototype is online');
 });
 
 client.on('message', message => {
@@ -67,21 +73,29 @@ client.on('message', message => {
             if(genshin_args === 'ar') {
                 client.commands.get('genshin_ar_counter').execute(Discord, client, message, args);
             }
-            /* command: ~genshin info */
-            else if (genshin_args === 'info') {
-                client.commands.get('genshin_info').execute(Discord, client, message, args);
-            }
-            /* command: ~genshin infolist */
-            else if (genshin_args === 'infolist') {
-                client.commands.get('genshin_infolist').execute(Discord, message);
-            }
-            /* command: ~genshin add info */
-            else if (genshin_args === 'add' && args[1] === 'info') {
-                client.commands.get('genshin_add_info').execute(Discord, client, message, args);
-            }
+            // /* command: ~genshin info */
+            // else if (genshin_args === 'info') {
+            //     client.commands.get('genshin_info').execute(Discord, client, message, args);
+            // }
+            // /* command: ~genshin infolist */
+            // else if (genshin_args === 'infolist') {
+            //     client.commands.get('genshin_infolist').execute(Discord, message);
+            // }
+            // /* command: ~genshin add info */
+            // else if (genshin_args === 'add' && args[1] === 'info') {
+            //     client.commands.get('genshin_add_info').execute(Discord, client, message, args);
+            // }
             /* command: ~genshin weapon */
             else if (genshin_args === 'weapon' || genshin_args === 'w') {
-                client.commands.get('genshin_weapon').execute(Discord, client, message, args);
+                client.commands.get('genshin_weapon').execute(Discord, client, message, args, db);
+            }
+            /* command: ~genshin add weapon */
+            else if ((genshin_args === 'a' || genshin_args === 'add') && (args[1] === 'w' || args[1] === 'weapon')) {
+                client.commands.get('genshin_add_weapon').execute(Discord, client, message, db);
+            }
+            /* command: ~genshin delete weapon */
+            else if ((genshin_args === 'd' || genshin_args === 'delete') && (args[1] === 'w' || args[1] === 'weapon')) {
+                client.commands.get('genshin_delete_weapon').execute(Discord, client, message, args, db);
             }
             /* help command for: ~genshin */
             else {
