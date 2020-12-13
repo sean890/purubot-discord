@@ -10,18 +10,6 @@ const fs = require('fs');
 
 const db = require('./models/index.js');
 
-// temporary execute
-// db.genshin_weapon.findOrCreate({where: {
-//     name: "Skyward Harp", 
-//     type: "Bow",
-//     rarity: "5*",
-//     atk: "674",
-//     secondary: "CRIT Rate 22.1%",
-//     effect: "Increases CRIT DMG by 20/25/30/35/40%. Hits have a 60/70/80/90/100% chance to inflict a small AoE attack, dealing 100% Physical ATK DMG. Can only occur once every 4s.",
-//     obtain: "Gacha",
-//     image: "https://cdn.discordapp.com/attachments/779649025392640000/786908332891832350/Weapon_Skyward_Blade.png"
-// }});
-
 client.commands = new Discord.Collection();
 
 // reading from commands folder
@@ -97,6 +85,20 @@ client.on('message', message => {
             else if ((genshin_args === 'd' || genshin_args === 'delete') && (args[1] === 'w' || args[1] === 'weapon')) {
                 client.commands.get('genshin_delete_weapon').execute(Discord, client, message, args, db);
             }
+
+            /* command: ~genshin character */
+            else if (genshin_args === 'character' || genshin_args === 'c') {
+                client.commands.get('genshin_character').execute(Discord, client, message, args, db);
+            }
+            /* command: ~genshin add weapon */
+            else if ((genshin_args === 'a' || genshin_args === 'add') && (args[1] === 'c' || args[1] === 'character')) {
+                client.commands.get('genshin_add_character').execute(Discord, client, message, db);
+            }
+            /* command: ~genshin delete weapon */
+            else if ((genshin_args === 'd' || genshin_args === 'delete') && (args[1] === 'c' || args[1] === 'character')) {
+                client.commands.get('genshin_delete_character').execute(Discord, client, message, args, db);
+            }
+
             /* help command for: ~genshin */
             else {
                 client.commands.get('genshin_help').execute(Discord, message);
