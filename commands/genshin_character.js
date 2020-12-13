@@ -3,7 +3,7 @@ const { features, exitCode } = require('process');
 const path = require('path');
 
 // fuse.js
-// const FUSE_SCORE_THRESHOLD = 0.2; // a search result must be lower than this to be qualified
+const FUSE_SCORE_THRESHOLD = 0.5; // a search result must be lower than this to be qualified
 const Fuse = require('fuse.js');
 var fs = require('fs');
 
@@ -65,6 +65,8 @@ module.exports = {
             // fuse search algorithm
             const fuse_results = fuse.search(input_keyword);
 
+            
+
             // debug
             // console.log("fuse_results");
             // console.log(fuse_results);
@@ -78,12 +80,12 @@ module.exports = {
             // console.log(fuse_results.length);
 
             // array to store all qualified positions of results in fuse_results which has a score lower than FUSE_SCORE_THRESHOLD
-            // const fuse_results_qualified_pos = [];
-            // for (var i = 0; i < fuse_results.length; i++) {
-            //     if (fuse_results[i].score <= FUSE_SCORE_THRESHOLD) {
-            //         fuse_results_qualified_pos.push(i);
-            //     }
-            // }
+            const fuse_results_qualified_pos = [];
+            for (var i = 0; i < fuse_results.length; i++) {
+                if (fuse_results[i].score <= FUSE_SCORE_THRESHOLD) {
+                    fuse_results_qualified_pos.push(i);
+                }
+            }
 
             //debug
             // console.log("array pos:" + fuse_results_qualified_pos);
@@ -103,8 +105,8 @@ module.exports = {
             else {
 
                 // character variables to store the output data
-                var character_name = fuse_results[fuse_results[0]].item.name;
-                var character_link = fuse_results[fuse_results[0]].item.link;
+                var character_name = fuse_results[fuse_results_qualified_pos[0]].item.name;
+                var character_link = fuse_results[fuse_results_qualified_pos[0]].item.link;
 
                 // send message
                 sendDiscordMessage(message, character_name, character_link);
