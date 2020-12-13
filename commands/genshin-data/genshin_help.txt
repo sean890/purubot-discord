@@ -2,6 +2,7 @@
 
 ***Available commands***
 `~g ar`
-`~g info`
+`~g weapon`
+`~g character`
 
 Type the commands above to show its specific usage guide.
