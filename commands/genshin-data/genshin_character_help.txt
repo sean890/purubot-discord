@@ -1,5 +1,5 @@
 **`~g character/~g c`**
-Search for a character's name
+Search for a character's information
 
 ***Parameters***
 `[character name]`: Don't worry it doesn't have to be the exact name, paimon will pick the nearest match!
