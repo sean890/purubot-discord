@@ -3,7 +3,7 @@ const { features, exitCode } = require('process');
 const path = require('path');
 
 // fuse.js
-const FUSE_SCORE_THRESHOLD = 0.3; // a search result must be lower than this to be qualified
+const FUSE_SCORE_THRESHOLD = 0.2; // a search result must be lower than this to be qualified
 const MAX_MULTI_RESULT_DISPLAY = 10;
 const Fuse = require('fuse.js');
 // import data file for fuse
@@ -160,8 +160,8 @@ module.exports = {
                 const fuse_results = fuse.search(input_keyword);
 
                 // debug
-                console.log("fuse_results");
-                console.log(fuse_results);
+                // console.log("fuse_results");
+                // console.log(fuse_results);
                 // console.log("fuse_results[0]");
                 // console.log(fuse_results[0]);
                 // console.log("fuse_results[0].item.keyword");

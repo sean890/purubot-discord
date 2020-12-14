@@ -19,7 +19,7 @@ var fs = require('fs');
 const MIC_EMOJI = "purubooli";
 
 // preparing help message for user
-const HELP_MESSAGE = "paimon can't find anything, type `paimon! artifact/p! w` for the help manual";
+const HELP_MESSAGE = "paimon can't find anything, type `paimon! artifact/p! a` for the help manual";
 
 function sendDiscordEmbedMessage(Discord, message, artifact_id, artifact_name, artifact_effect, artifact_image) {
     // prepare string for output
@@ -141,8 +141,8 @@ module.exports = {
                 const fuse_results = fuse.search(input_keyword);
 
                 // debug
-                // console.log("fuse_results");
-                // console.log(fuse_results);
+                console.log("fuse_results");
+                console.log(fuse_results);
                 // console.log("fuse_results[0]");
                 // console.log(fuse_results[0]);
                 // console.log("fuse_results[0].item.keyword");
