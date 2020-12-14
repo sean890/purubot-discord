@@ -218,7 +218,7 @@ module.exports = {
                     // preparing the search_results_string
                     var search_results_string = "";
 
-                    for (var i = 0; i < MAX_MULTI_RESULT_DISPLAY; i++) {
+                    for (var i = 0; (i < fuse_results_qualified_pos.length) && (i < MAX_MULTI_RESULT_DISPLAY); i++) {
 
                         var id_output = fuse_results[fuse_results_qualified_pos[i]].item.id;
                         var keyword_output = fuse_results[fuse_results_qualified_pos[i]].item.name;
