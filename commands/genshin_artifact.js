@@ -214,7 +214,7 @@ module.exports = {
                         .setURL("https://discord.js.org/#/docs/main/v12/class/MessageEmbed")
                         .addFields({
                             name: "Search results for '" + input_keyword + "'",
-                            value: search_results_string + "\n\nType `p! w [ID]` to fetch the corresponding information."
+                            value: search_results_string + "\n\nType `p! a [ID]` to fetch the corresponding information."
                         });
 
                     message.channel.send(embed);
