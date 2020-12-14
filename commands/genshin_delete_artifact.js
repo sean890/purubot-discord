@@ -31,7 +31,7 @@ module.exports = {
             return;
         }
 
-        artifact_id = trimChar2(artifact_name, '\n', " ");
+        artifact_id = trimChar2(artifact_id, '\n', " ");
         artifact_name = trimChar2(artifact_name, '\n', " ");
 
         db.genshin_artifact.destroy({
