@@ -3,7 +3,7 @@ const { features, exitCode } = require('process');
 const path = require('path');
 
 // fuse.js
-const FUSE_SCORE_THRESHOLD = 0.2; // a search result must be lower than this to be qualified
+const FUSE_SCORE_THRESHOLD = 0.5; // a search result must be lower than this to be qualified
 const Fuse = require('fuse.js');
 // import data file for fuse
 // compile keywords available in file: ./user-given-data/genshin_info_keywords.csv
@@ -38,7 +38,7 @@ function sendDiscordEmbedMessage(Discord, message, weapon_id, weapon_name, weapo
         /*
         * Takes a Date object, defaults to current date.
         */
-        .setImage(weapon_image)
+        .setThumbnail(weapon_image)
         .setTimestamp()
         .setURL("https://discord.js.org/#/docs/main/v12/class/MessageEmbed")
         .addFields({
