@@ -3,7 +3,7 @@ const { features, exitCode } = require('process');
 const path = require('path');
 
 // preparing help message for user
-const HELP_MESSAGE = "too complex for paimon, type `~g ar` for help manual";
+const HELP_MESSAGE = "too complex for paimon, type `p! ar` for help manual";
 const AR_OVER_MESSAGE = "high and gay AR, no calculations available for you";
 
 const NUMBER_OF_COM_PER_DAY = 4; // number of commissions a day
@@ -223,7 +223,7 @@ module.exports = {
         .setURL("https://discord.js.org/#/docs/main/v12/class/MessageEmbed")
         .addFields({
             name: "Days to hit the corresponding AR levels",
-            value: "Calculating starting from AR "+ ar + " - " + exp + "/" + ar_levels_json[ar-1].exp +", " + num_weis + " weis hunted daily and additional " + add_exp + " EXP gained daily." + "\n\n" + info_string + "\nCalculations only includes EXP gained from commissions, resin and weis.\nDoes not include EXP gained from story, events and chests, thus actual progress might differ.\nAdditional info: 180 resin a day, 175/200/225/250 EXP per commission, 18 EXP per wei\n\nType `~g ar` for more info about the command!"
+            value: "Calculating starting from AR "+ ar + " - " + exp + "/" + ar_levels_json[ar-1].exp +", " + num_weis + " weis hunted daily and additional " + add_exp + " EXP gained daily." + "\n\n" + info_string + "\nCalculations only includes EXP gained from commissions, resin and weis.\nDoes not include EXP gained from story, events and chests, thus actual progress might differ.\nAdditional info: 180 resin a day, 175/200/225/250 EXP per commission, 18 EXP per wei\n\nType `p! ar` for more info about the command!"
         });
 
         message.channel.send(embed);

@@ -19,7 +19,7 @@ var fs = require('fs');
 const MIC_EMOJI = "purubooli";
 
 // preparing help message for user
-const HELP_MESSAGE = "paimon can't find anything, type `~g artifact/~g w` for the help manual";
+const HELP_MESSAGE = "paimon can't find anything, type `paimon! artifact/p! w` for the help manual";
 
 function sendDiscordEmbedMessage(Discord, message, artifact_id, artifact_name, artifact_effect, artifact_image) {
     // prepare string for output
@@ -50,7 +50,7 @@ module.exports = {
     description: "command for fetching artifacts information in genshin",
     execute(Discord, client, message, args, db) {
 
-        // if args[1] is undefined means the user only typed "~g artifact" which means we display the help message
+        // if args[1] is undefined means the user only typed "[!] artifact" which means we display the help message
         if (typeof args[1] === 'undefined') {
             client.commands.get('genshin_artifact_help').execute(Discord, message);
             return;
@@ -61,7 +61,7 @@ module.exports = {
 
         // fetching the keyword entered by the user
         var input_keyword = "";
-        // i starts at 1 because args[0] will be "artifact" in "~genshin artifact"
+        // i starts at 1 because args[0] will be "artifact" in "p! artifact"
         for (var i = 1; i < args.length; i++) {
             input_keyword += args[i];
             if (i != args.length - 1) {
@@ -214,7 +214,7 @@ module.exports = {
                         .setURL("https://discord.js.org/#/docs/main/v12/class/MessageEmbed")
                         .addFields({
                             name: "Search results for '" + input_keyword + "'",
-                            value: search_results_string + "\n\nType `~g w [ID]` to fetch the corresponding information."
+                            value: search_results_string + "\n\nType `p! w [ID]` to fetch the corresponding information."
                         });
 
                     message.channel.send(embed);

@@ -1,11 +1,11 @@
-**`~g character/~g c`**
+**`paimon! character/p! c`**
 Search for a character's information
 
 ***Parameters***
 `[character name]`: Don't worry it doesn't have to be the exact name, paimon will pick the nearest match!
 
 ***Usages***
-`~g c [character name]`
+`p! c [character name]`
 
 ***Examples***
-`~g c amber`
+`p! c amber`

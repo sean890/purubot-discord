@@ -1,13 +1,13 @@
-**`~g artifact/~g a`**
+**`paimon! artifact/p! a`**
 Search for an artifact's information
 
 ***Parameters***
 `[artifact name/effect]`: Search either using the artifact's name or part of its effect
 
 ***Usages***
-`~g a [artifact name]`
-`~g a [artifact effect]`
+`p! a [artifact name]`
+`p! a [artifact effect]`
 
 ***Examples***
-`~g a gladiator`
-`~g a pyro dmg`
+`p! a gladiator`
+`p! a pyro dmg`

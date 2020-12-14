@@ -19,7 +19,7 @@ var fs = require('fs');
 const MIC_EMOJI = "purubooli";
 
 // preparing help message for user
-const HELP_MESSAGE = "paimon can't find anything, type `~g weapon/~g w` for the help manual";
+const HELP_MESSAGE = "paimon can't find anything, type `paimon! weapon/p! w` for the help manual";
 
 function sendDiscordEmbedMessage(Discord, message, weapon_id, weapon_name, weapon_type, weapon_rarity, weapon_atk, weapon_secondary, weapon_effect, weapon_obtain, weapon_image) {
     // prepare string for output
@@ -237,7 +237,7 @@ module.exports = {
                         .setURL("https://discord.js.org/#/docs/main/v12/class/MessageEmbed")
                         .addFields({
                             name: "Search results for '" + input_keyword + "'",
-                            value: search_results_string + "\n\nType `~g w [ID]` to fetch the corresponding information."
+                            value: search_results_string + "\n\nType `p! w [ID]` to fetch the corresponding information."
                         });
 
                     message.channel.send(embed);

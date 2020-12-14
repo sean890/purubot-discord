@@ -11,7 +11,7 @@ var fs = require('fs');
 const MIC_EMOJI = "purubooli";
 
 // preparing help message for user
-const HELP_MESSAGE = "paimon can't find anything, type `~g character/~g c` for the help manual";
+const HELP_MESSAGE = "paimon can't find anything, type `paimon! character/p! c` for the help manual";
 
 function sendDiscordMessage(message, character_name, character_info_link) {
     // prepare string for output

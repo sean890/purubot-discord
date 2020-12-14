@@ -1,17 +1,17 @@
-**`~g weapon/~g w`**
+**`paimon! weapon/p! w`**
 Search for weapon information with a keyword!
 
 ***Parameters***
 `[keyword]`: Search for keywords of the weapon you wish to display, can be its name, rarity, weapon type, secondary stat, effect, location
 
 ***Usages***
-`~g w [keyword]`
+`p! w [keyword]`
 
 ***Examples***
 Search by:
-Name - `~g w prototype animus`
-Rarity - `~g w 5*`
-Weapon type - `~g w sword`
-Secondary stat - `~g w energy recharge`
-Effect - `~g w increases atk`
-Location - `~g w craftable`
+Name - `p! w prototype animus`
+Rarity - `p! w 5*`
+Weapon type - `p! w sword`
+Secondary stat - `p! w energy recharge`
+Effect - `p! w increases atk`
+Location - `p! w craftable`

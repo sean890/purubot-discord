@@ -1,4 +1,4 @@
-**`~genshin ar`**
+**`paimon! ar`**
 Calculates the number of days needed to reach the next 10 AR levels.
 
 ***Parameters***
@@ -10,16 +10,16 @@ _Optional:_
 `[Additional EXP]` : The amount of additional EXP gained daily
 
 ***Usages***
-`~g ar [AR level]`
-`~g ar [AR level] [your current exp]`
-`~g ar [AR level] [your current exp] [Number of Weis]`
-`~g ar [AR level] [your current exp] [Number of Weis] [Additional EXP]`
+`p! ar [AR level]`
+`p! ar [AR level] [your current exp]`
+`p! ar [AR level] [your current exp] [Number of Weis]`
+`p! ar [AR level] [your current exp] [Number of Weis] [Additional EXP]`
 
 ***Examples***
-`~g ar 30`
-`~g ar 30 2750`
-`~g ar 30 2750 5`
-`~g ar 30 2750 5 300`
+`p! ar 30`
+`p! ar 30 2750`
+`p! ar 30 2750 5`
+`p! ar 30 2750 5 300`
 
 _Fun fact: EXP given per commission completed differs on different AR levels, but paimon is smart enough to take that into account!_
 

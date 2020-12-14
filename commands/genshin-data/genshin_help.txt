@@ -1,9 +1,9 @@
-**`~g`/`~genshin`**
+**`p!`/`paimon!`**
 
 ***Available commands***
-`~g ar`
-`~g character`
-`~g weapon`
-`~g artifact`
+`p! ar`
+`p! character`
+`p! weapon`
+`p! artifact`
 
 Type the commands above to show its specific usage guide.

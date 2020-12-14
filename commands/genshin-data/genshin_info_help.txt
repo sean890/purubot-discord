@@ -1,4 +1,4 @@
-**`~g info`**
+**`p! info`**
 Search for genshin related information with an ID or keyword!
 
 ***Parameters***
@@ -7,14 +7,14 @@ _OR_
 `[ID]`: ID for the keyword of the info you wish to display
 
 ***Usages***
-`~g info [keyword]`
+`p! info [keyword]`
 _OR_
-`~g info [ID]`
+`p! info [ID]`
 
 ***Examples***
-`~g info artifacts possible base stats`/`~genshin info 1`
-`~g info artifact fodder exp`/`~genshin info 2`
+`p! info artifacts possible base stats`/`p!enshin info 1`
+`p! info artifact fodder exp`/`p!enshin info 2`
 
 ***Some Keywords available***
-For the complete list, type `~g infolist`.
+For the complete list, type `p! infolist`.
 
