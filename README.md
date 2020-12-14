@@ -16,7 +16,7 @@ Running bash on ⬢ nameful-wolf-12818... up, run.5074 (Free)
 Source: https://stackabuse.com/adding-a-postgresql-database-to-a-node-js-app-on-heroku/
 
 ***Heroku check free dyno hours***
-> heroku ps -a app-name
+> heroku ps -a paimon-bot-1
 
 ***Heroku database backup commands***
 > heroku pg:backups:capture --app paimon-bot-1
