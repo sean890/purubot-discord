@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-const prefix = 'protop';
+const prefix = 'p';
 
 const fs = require('fs');
 
