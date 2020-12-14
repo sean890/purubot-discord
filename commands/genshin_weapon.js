@@ -4,6 +4,7 @@ const path = require('path');
 
 // fuse.js
 const FUSE_SCORE_THRESHOLD = 0.3; // a search result must be lower than this to be qualified
+const MAX_MULTI_RESULT_DISPLAY = 10;
 const Fuse = require('fuse.js');
 // import data file for fuse
 // compile keywords available in file: ./user-given-data/genshin_info_keywords.csv
@@ -159,8 +160,8 @@ module.exports = {
                 const fuse_results = fuse.search(input_keyword);
 
                 // debug
-                // console.log("fuse_results");
-                // console.log(fuse_results);
+                console.log("fuse_results");
+                console.log(fuse_results);
                 // console.log("fuse_results[0]");
                 // console.log(fuse_results[0]);
                 // console.log("fuse_results[0].item.keyword");
@@ -217,7 +218,7 @@ module.exports = {
                     // preparing the search_results_string
                     var search_results_string = "";
 
-                    for (var i = 0; i < fuse_results_qualified_pos.length; i++) {
+                    for (var i = 0; i < MAX_MULTI_RESULT_DISPLAY; i++) {
 
                         var id_output = fuse_results[fuse_results_qualified_pos[i]].item.id;
                         var keyword_output = fuse_results[fuse_results_qualified_pos[i]].item.name;
