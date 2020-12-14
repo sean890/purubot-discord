@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-const prefix = 'paimo';
+const prefix = 'p';
 
 const fs = require('fs');
 
@@ -50,11 +50,11 @@ client.on('message', message => {
         // }
 
         /* command: ~p */
-        if(CMD_NAME === 'ns') {
+        if(CMD_NAME === 'uru') {
             client.commands.get('emote').execute(client, message, args, db);
         }
         /* command: ~genshin */
-        else if (CMD_NAME === 'n!') {
+        else if (CMD_NAME === '!' || CMD_NAME === 'aimon!') {
             const genshin_args = args[0]; // fetch the argument after -genshin
 
             /* command: ~genshin ar */
