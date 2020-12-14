@@ -78,11 +78,11 @@ client.on('message', message => {
                 client.commands.get('genshin_weapon').execute(Discord, client, message, args, db);
             }
             /* command: ~genshin add weapon */
-            else if ((genshin_args === 'a' || genshin_args === 'add') && (args[1] === 'w' || args[1] === 'weapon')) {
+            else if ((genshin_args === 'add') && (args[1] === 'w' || args[1] === 'weapon')) {
                 client.commands.get('genshin_add_weapon').execute(Discord, client, message, db);
             }
             /* command: ~genshin delete weapon */
-            else if ((genshin_args === 'd' || genshin_args === 'delete') && (args[1] === 'w' || args[1] === 'weapon')) {
+            else if ((genshin_args === 'delete') && (args[1] === 'w' || args[1] === 'weapon')) {
                 client.commands.get('genshin_delete_weapon').execute(Discord, client, message, args, db);
             }
 
@@ -91,11 +91,11 @@ client.on('message', message => {
                 client.commands.get('genshin_character').execute(Discord, client, message, args, db);
             }
             /* command: ~genshin add character */
-            else if ((genshin_args === 'a' || genshin_args === 'add') && (args[1] === 'c' || args[1] === 'character')) {
+            else if ((genshin_args === 'add') && (args[1] === 'c' || args[1] === 'character')) {
                 client.commands.get('genshin_add_character').execute(Discord, client, message, db);
             }
             /* command: ~genshin delete character */
-            else if ((genshin_args === 'd' || genshin_args === 'delete') && (args[1] === 'c' || args[1] === 'character')) {
+            else if ((genshin_args === 'delete') && (args[1] === 'c' || args[1] === 'character')) {
                 client.commands.get('genshin_delete_character').execute(Discord, client, message, args, db);
             }
 
@@ -104,11 +104,11 @@ client.on('message', message => {
                 client.commands.get('genshin_artifact').execute(Discord, client, message, args, db);
             }
             /* command: ~genshin add character */
-            else if ((genshin_args === 'a' || genshin_args === 'add') && (args[1] === 'a' || args[1] === 'artifact')) {
+            else if ((genshin_args === 'add') && (args[1] === 'a' || args[1] === 'artifact')) {
                 client.commands.get('genshin_add_artifact').execute(Discord, client, message, db);
             }
             /* command: ~genshin delete character */
-            else if ((genshin_args === 'd' || genshin_args === 'delete') && (args[1] === 'a' || args[1] === 'artifact')) {
+            else if ((genshin_args === 'delete') && (args[1] === 'a' || args[1] === 'artifact')) {
                 client.commands.get('genshin_delete_artifact').execute(Discord, client, message, args, db);
             }
 
