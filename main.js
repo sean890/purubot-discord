@@ -54,7 +54,7 @@ client.on('message', message => {
             client.commands.get('emote').execute(client, message, args, db);
         }
         /* command: ~genshin */
-        else if (CMD_NAME === '!' || CMD_NAME === 'aimon!') {
+        else if (CMD_NAME === '!' || CMD_NAME === 'aimon!' || CMD_NAME === '!help') {
             const genshin_args = args[0]; // fetch the argument after -genshin
 
             /* command: ~genshin ar */
