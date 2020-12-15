@@ -8,7 +8,7 @@ module.exports = {
         // fetch help message string from file
         var fs = require('fs');
         // fs.readFile(__dirname+"\\"+"genshin-data"+"\\"+"genshin_help.txt", 'utf8', function(err, data) {
-    console.log(path.resolve(__dirname, 'genshin-data', 'genshin_help.txt'));
+    // console.log(path.resolve(__dirname, 'genshin-data', 'genshin_help.txt'));
 
         fs.readFile(path.resolve(__dirname, 'genshin-data', 'genshin_help.txt'), 'utf8', function(err, data) {
             // creating embed message for discord
