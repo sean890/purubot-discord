@@ -184,12 +184,12 @@ module.exports = {
         while(pos != NUM_LEVELS_COUNTED && curr_level < MAX_LEVEL) {
 
             curr_total_exp += total_exp_daily;
-            console.log('adding ' + total_exp_daily);
+            // console.log('adding ' + total_exp_daily);
             day_counter += 1;
 
             // a level up occured
             if (curr_total_exp >= next_total_exp) {
-                console.log('level up');
+                // console.log('level up');
                 // updating variables
                 // add ar level & day counter into the output arrays
                 curr_level += 1;
