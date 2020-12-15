@@ -68,7 +68,6 @@ client.on('message', message => {
             client.commands.get('emote').execute(client, message, args, db);
         }
         else if (CMD_NAME === '!id') {
-            console.log("caled");
             client.commands.get('display_user_id').execute(client, message, args, db);
         }
         /* command: ~genshin */
