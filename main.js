@@ -136,6 +136,9 @@ client.on('message', message => {
                 client.commands.get('genshin_help').execute(Discord, message);
             }
         }
+        else if (CMD_NAME === '!kiss' || CMD_NAME === '!hug' || CMD_NAME === '!lick' || CMD_NAME === '!pat') {
+            client.commands.get('mic').execute(Discord, client, message, CMD_NAME, args);
+        }
     }
 
 });
