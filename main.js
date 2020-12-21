@@ -26,18 +26,31 @@ function validPermissions(id) {
     return false;
 }
 
-// top.gg stats
-const DBL = require("dblapi.js");
-const dbl = new DBL(process.env.TOPGG_API_KEY, process.env.DISCORD_BOT_CLIENT);
+// // top.gg stats
+// const DBL = require("dblapi.js");
+// const dbl = new DBL(process.env.TOPGG_API_KEY, process.env.DISCORD_BOT_CLIENT);
 
-// logging events
-dbl.on('posted', () => {
-  console.log('Server count posted!');
-})
+// // logging events
+// dbl.on('posted', () => {
+//   console.log('Server count posted!');
+// })
 
-dbl.on('error', e => {
- console.log(`Oops! ${e}`);
-})
+// dbl.on('error', e => {
+//  console.log(`Oops! ${e}`);
+// })
+const Topgg = require('@top-gg/sdk')
+
+const api = new Topgg.Api(process.env.TOPGG_API_KEY)
+
+setInterval(() => {
+  api.postStats({
+    serverCount: client.guilds.cache.size,
+    // shardId: client.shard.ids[0], // if you're sharding
+    // shardCount: client.options.shardCount
+  })
+}, 1800000) // post every 30 minutes
+
+
 
 // reading from commands folder
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
