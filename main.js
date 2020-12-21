@@ -27,15 +27,16 @@ function validPermissions(id) {
 }
 
 // top.gg stats
-const AutoPoster = require('topgg-autoposter')
-const ap = AutoPoster(process.env.TOPGG_API_KEY, process.env.DISCORD_BOT_CLIENT)
-// logger
-ap.on('posted', () => {
-    console.log('Server count posted!');
+const DBL = require("dblapi.js");
+const dbl = new DBL(process.env.TOPGG_API_KEY, process.env.DISCORD_BOT_CLIENT);
+
+// logging events
+dbl.on('posted', () => {
+  console.log('Server count posted!');
 })
 
-ap.on('error', e => {
-    console.log(`Oops! ${e}`);
+dbl.on('error', e => {
+ console.log(`Oops! ${e}`);
 })
 
 // reading from commands folder
