@@ -71,6 +71,12 @@ client.on('message', message => {
         else if (CMD_NAME === '!id') {
             client.commands.get('display_user_id').execute(client, message, args, db);
         }
+        else if (CMD_NAME.toLowerCase() === '!kiss' || CMD_NAME.toLowerCase() === '!hug' || CMD_NAME.toLowerCase() === '!lick' || CMD_NAME.toLowerCase() === '!pat') {
+            client.commands.get('mic').execute(Discord, client, message, CMD_NAME, args);
+        }
+        else if (CMD_NAME.toLowerCase() === '!puru' || CMD_NAME.toLowerCase() === '!purus') {
+            client.commands.get('playground_profile_purus').execute(Discord, client, message, args, db);
+        }
         /* command: ~genshin */
         else if (CMD_NAME === '!' || CMD_NAME === 'aimon!') {
             const genshin_args = args[0]; // fetch the argument after -genshin
@@ -142,9 +148,7 @@ client.on('message', message => {
                 client.commands.get('genshin_help').execute(Discord, message);
             }
         }
-        else if (CMD_NAME === '!kiss' || CMD_NAME === '!hug' || CMD_NAME === '!lick' || CMD_NAME === '!pat') {
-            client.commands.get('mic').execute(Discord, client, message, CMD_NAME, args);
-        }
+        
     }
 
 });
