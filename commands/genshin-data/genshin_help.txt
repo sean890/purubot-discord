@@ -1,9 +1,9 @@
 **`p!`/`paimon!`**
 
-***Available commands***
+***Available commands for Genshin Impact***
 `p! ar`
-`p! character`
-`p! weapon`
-`p! artifact`
+`p! character`/`p! c`
+`p! weapon`/`p! w`
+`p! artifact`//`p! a`
 
 Type the commands above to show its specific usage guide.

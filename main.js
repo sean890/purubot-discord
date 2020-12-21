@@ -5,6 +5,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const prefix = 'protop';
+// const prefix2 = 'P'
 
 const fs = require('fs');
 const path = require('path');
@@ -42,7 +43,7 @@ client.once('ready', () => {
 client.on('message', message => {
     if (message.author.bot) return;
 
-    if (message.content.startsWith(prefix)) {
+    if (message.content.toLowerCase().startsWith(prefix)) {
         const [CMD_NAME, ...args] = message.content
             .trim()
             .substring(prefix.length)
@@ -73,9 +74,14 @@ client.on('message', message => {
         /* command: ~genshin */
         else if (CMD_NAME === '!' || CMD_NAME === 'aimon!') {
             const genshin_args = args[0]; // fetch the argument after -genshin
+            
+            if (typeof genshin_args === 'undefined') {
+                client.commands.get('genshin_help').execute(Discord, message);
+                return;
+            }
 
             /* command: ~genshin ar */
-            if (genshin_args === 'ar') {
+            if (genshin_args.toLowerCase() === 'ar') {
                 client.commands.get('genshin_ar_counter').execute(Discord, client, message, args);
             }
             // /* command: ~genshin info */
@@ -91,15 +97,15 @@ client.on('message', message => {
             //     client.commands.get('genshin_add_info').execute(Discord, client, message, args);
             // }
             /* command: ~genshin weapon */
-            else if (genshin_args === 'weapon' || genshin_args === 'w') {
+            else if (genshin_args.toLowerCase() === 'weapon' || genshin_args.toLowerCase() === 'w') {
                 client.commands.get('genshin_weapon').execute(Discord, client, message, args, db);
             }
             /* command: ~genshin character */
-            else if (genshin_args === 'character' || genshin_args === 'c') {
+            else if (genshin_args.toLowerCase() === 'character' || genshin_args.toLowerCase() === 'c') {
                 client.commands.get('genshin_character').execute(Discord, client, message, args, db);
             }
             /* command: ~genshin artifact */
-            else if (genshin_args === 'artifact' || genshin_args === 'a') {
+            else if (genshin_args.toLowerCase() === 'artifact' || genshin_args.toLowerCase() === 'a') {
                 client.commands.get('genshin_artifact').execute(Discord, client, message, args, db);
             }
 

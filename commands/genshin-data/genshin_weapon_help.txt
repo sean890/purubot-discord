@@ -10,7 +10,6 @@ Search for weapon information with a keyword!
 ***Examples***
 Search by:
 Name - `p! w prototype animus`
-Rarity - `p! w 5*`
 Weapon type - `p! w sword`
 Secondary stat - `p! w energy recharge`
 Effect - `p! w increases atk`
