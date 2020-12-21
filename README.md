@@ -24,3 +24,5 @@ Source: https://stackabuse.com/adding-a-postgresql-database-to-a-node-js-app-on-
 > heroku pg:backups:restore b101 DATABASE_URL --app paimon-bot-1
 
 Source: https://devcenter.heroku.com/articles/heroku-postgres-backups
+
+Migrate bot to another heroku account guide made by me: https://docs.google.com/document/d/1TSiYy0kbLhJDD0d15oV83LOrE3aetfM0J_qTSBqg_RE
