@@ -47,7 +47,9 @@ setInterval(() => {
     serverCount: client.guilds.cache.size,
     // shardId: client.shard.ids[0], // if you're sharding
     // shardCount: client.options.shardCount
+    
   })
+  console.log('bot stats posted!');
 }, 1800000) // post every 30 minutes
 
 
