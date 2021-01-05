@@ -111,6 +111,9 @@ client.on('message', message => {
         else if (CMD_NAME.toLowerCase() === 'itter' && args[0] === 'black' && args[1] === 'cat') {
             message.channel.send(`https://tenor.com/view/thief-stealing-stole-cat-kidnapping-gif-13580660`);
         }
+        else if (CMD_NAME.toLowerCase() === '!misc') {
+            client.commands.get('misc_help').execute(Discord, message);
+        }
         /* command: ~genshin */
         else if (CMD_NAME === '!' || CMD_NAME === 'aimon!' || CMD_NAME === '!help') {
             const genshin_args = args[0]; // fetch the argument after -genshin

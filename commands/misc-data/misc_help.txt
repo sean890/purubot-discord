@@ -1,0 +1,23 @@
+**1 - `p!gacha`**
+Gacha simulator for Genshin Impact!
+
+***Usages***
+`p!gacha [number]` - number has to be 10 to 100
+
+
+**2 - `p!kiss`/`p!hug`/`p!lick`**
+Kiss, lick or hug someone!
+
+***Usages***
+`p!kiss @user`
+
+
+**3 - `puru`**
+Use any emotes paimon bot is a part of!
+
+***Usages***
+`puru :EmoteName:`
+
+
+**4 - `pitter black cat`**
+Pitter black cat

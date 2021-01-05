@@ -7,3 +7,11 @@
 `p! artifact`//`p! a`
 
 Type the commands above to show its specific usage guide.
+
+***Misc commands***
+`p!gacha`
+`p!kiss`/`p!hug`/`p!lick`
+`puru`
+`pitter black cat`
+
+Type p!misc to learn how to use these commands.
