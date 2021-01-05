@@ -57,7 +57,6 @@ module.exports = {
             }
             // 4* pity
             else if (i % TEN_PULLS == 0 && pity_needed == true) {
-                console.log('pity hit');
                 output_result += four_star_pool[Math.floor(Math.random() * four_star_pool.length)] + " :star: :star: :star: :star: " + '\n';
             }
             
