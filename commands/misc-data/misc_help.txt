@@ -21,3 +21,6 @@ Use any emotes paimon bot is a part of!
 
 **4 - `pitter black cat`**
 Pitter black cat
+
+***User Support***
+`p!support`

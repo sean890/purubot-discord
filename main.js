@@ -185,6 +185,9 @@ client.on('message', message => {
                 client.commands.get('genshin_help').execute(Discord, message);
             }
         }
+        else if (CMD_NAME === '!support') {
+            client.commands.get('support').execute(Discord, message);
+        }
         
     }
 
