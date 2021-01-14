@@ -14,7 +14,7 @@ Type the commands above to show its specific usage guide.
 `puru`
 `pitter black cat`
 
+Type p!misc to learn how to use these commands.
+
 ***User Support***
 `p!support`
-
-Type p!misc to learn how to use these commands.
