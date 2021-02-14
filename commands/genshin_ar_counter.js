@@ -18,7 +18,7 @@ const EXP_PER_COM_AR35to55 = 250;
 
 const WEI_EXP = 18; // exp given by each wei hilichurl
 
-const MAX_LEVEL = 57; // max level available in the JSON database
+const MAX_LEVEL = 60; // max level available in the JSON database
 const NUM_LEVELS_COUNTED = 10; // program will only count 10 levels ahead for now
 
 module.exports = {
