@@ -14,11 +14,11 @@ const RESIN_EXP_PER_DAY = 900 // 180 resin a day = 800 exp
 const EXP_PER_COM_AR12to15 = 175;
 const EXP_PER_COM_AR16to24 = 200;
 const EXP_PER_COM_AR25to34 = 225;
-const EXP_PER_COM_AR35to55 = 250;
+const EXP_PER_COM_AR35toMax = 250;
 
 const WEI_EXP = 18; // exp given by each wei hilichurl
 
-const MAX_LEVEL = 57; // max level available in the JSON database
+const MAX_LEVEL = 60; // max level available in the JSON database
 const NUM_LEVELS_COUNTED = 10; // program will only count 10 levels ahead for now
 
 module.exports = {
@@ -173,8 +173,8 @@ module.exports = {
         else if (curr_level < 35) {
             exp_per_com = EXP_PER_COM_AR25to34;
         }
-        else if (curr_level < 55) {
-            exp_per_com = EXP_PER_COM_AR35to55;
+        else if (curr_level < MAX_LEVEL) {
+            exp_per_com = EXP_PER_COM_AR35toMax;
         }
 
         // total exp gained daily
