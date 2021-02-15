@@ -101,9 +101,9 @@ client.on('message', message => {
         else if (CMD_NAME.toLowerCase() === '!kiss' || CMD_NAME.toLowerCase() === '!hug' || CMD_NAME.toLowerCase() === '!lick' || CMD_NAME.toLowerCase() === '!pat') {
             client.commands.get('mic').execute(Discord, client, message, CMD_NAME, args);
         }
-        else if (CMD_NAME.toLowerCase() === '!puru' || CMD_NAME.toLowerCase() === '!purus') {
-            client.commands.get('playground_profile_purus').execute(Discord, client, message, args, db);
-        }
+        // else if (CMD_NAME.toLowerCase() === '!puru' || CMD_NAME.toLowerCase() === '!purus') {
+        //     client.commands.get('playground_profile_purus').execute(Discord, client, message, args, db);
+        // }
         else if (CMD_NAME.toLowerCase() === '!gacha') {
             // console.log(args[0]);
             client.commands.get('playground_genshin_gacha').execute(Discord, client, message, args);
