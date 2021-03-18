@@ -10,7 +10,11 @@ const db = {};
 
 let sequelize;
 if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
+    // old
+    // equelize = new Sequelize(process.env[config.use_env_variable], config);
+
+    // new
+    sequelize = new Sequelize('postgres://iqezzwhocrduzj:f5c38d0f74cec1f0904ea5b0d1edac6026dde1f3324386a227ba365f5b16d876@ec2-54-81-37-115.compute-1.amazonaws.com:5432/d1geqa245p50dm?verifyServerCertificate=false&useSSL=true');
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
