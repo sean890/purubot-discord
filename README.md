@@ -1,4 +1,4 @@
-paimon bot for discord developed by puru
+paimon bot for discord developed by puru: https://top.gg/bot/779160543109709824
 
 ***Sequelize commands***
 > npx sequelize-cli model:generate --name Url --attributes url:string,shortUrl:string
